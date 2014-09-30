@@ -18,11 +18,19 @@ To the install list.
 
 ## Using
 
-`bundle install`
+```
+bundle install;
+bundle exec ruby view/console/client.rb help;
+```
 
 ## Developing
 
-`bundle install`
+```
+bundle install
+bundle exec rspec
+```
+
+Any contribution is welcome.
 
 ### Relevant reads
 
