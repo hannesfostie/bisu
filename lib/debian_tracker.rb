@@ -1,5 +1,5 @@
 require 'open-uri'
-require 'nokogiri'
+require 'oga'
 
 # lib/debian_tracker.rb
 class DebianTracker
@@ -19,8 +19,8 @@ class DebianTracker
   end
 
   def fetch_suites
-    releases_page = Nokogiri::HTML(open(@url))
-    releases_page.xpath('//a/@href').map(&:content) - FALSE_POSITIVES
+    releases_page = Oga.parse_html(open(@url))
+    releases_page.xpath('//a/@href').map(&:text) - FALSE_POSITIVES
   end
 
   def fetch_listings(suite)
